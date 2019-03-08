@@ -36,7 +36,7 @@ public class TestUserprofile {
         }
         if(successful){
             System.out.println("Your user profile is created successfully.");
-            System.out.println(user1.getUserID()+" "+user1.getGenre());
+            System.out.println(user1.getUserID()+"  "+user1.getGenre());
         }else{
             System.out.println("User profiled failed to create.");
             user1 = null;

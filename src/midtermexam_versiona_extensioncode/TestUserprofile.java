@@ -21,10 +21,25 @@ public class TestUserprofile {
         for(int i=0;i<user1.genres.length;i++){
             System.out.println((i+1)+" "+user1.genres[i]);
         }
-        int userSelect = input.nextInt();
-        user1.setGenre(user1.genres[userSelect]);
-        System.out.println("Your user profile is created successfully.");
-        System.out.println(user1.getUserID()+" "+user1.getGenre());
-        
+        boolean successful = true;
+        try{
+            int userSelect = input.nextInt();
+            if(userSelect>=1 && userSelect<=4){
+                user1.setGenre(user1.genres[userSelect-1]);
+            }else{
+                System.out.println("Invalid input");
+                successful = false;
+            }
+        }catch(Exception e){
+            System.out.println("Invalid input");
+            successful = false;
+        }
+        if(successful){
+            System.out.println("Your user profile is created successfully.");
+            System.out.println(user1.getUserID()+" "+user1.getGenre());
+        }else{
+            System.out.println("User profiled failed to create.");
+            user1 = null;
+        }
     }
 }
